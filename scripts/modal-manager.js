@@ -19,7 +19,7 @@ const ModalManager = {
         
         for (const config of modalConfigs) {
             try {
-                const response = await fetch(config.file);
+                // const response = await fetch(config.file);
                 if (response.ok) {
                     const html = await response.text();
                     

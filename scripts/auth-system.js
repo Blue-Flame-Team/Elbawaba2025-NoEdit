@@ -55,7 +55,7 @@ const AuthSystem = (function() {
                     setTimeout(initializeCountrySelectors, 100);
                 }
             };
-            document.body.appendChild(script);
+            // document.body.appendChild(script);
         }
         
         // تهيئة القائمة المنسدلة للدول

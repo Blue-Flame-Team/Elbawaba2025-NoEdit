@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('click', (e) => {
             if (!container.contains(e.target)) {
-                dropdown.style.display = 'none';
+                // dropdown.style.display = 'none';
                 container.classList.remove('active');
             }
         });
