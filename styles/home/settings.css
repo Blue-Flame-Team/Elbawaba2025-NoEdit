@@ -271,7 +271,7 @@ body:not(.home-page).light-mode *[style*="#000000"]:not(h5.terms-subtitle),
 body:not(.home-page).light-mode *[style*="rgb(0, 0, 0)"]:not(h5.terms-subtitle),
 body:not(.home-page).light-mode *[style*="rgb(0,0,0)"]:not(h5.terms-subtitle) {
     color: rgb(0, 147, 123) !important;
-    background-color: rgb(0, 147, 123) !important;
+/*     background-color: rgb(0, 147, 123) !important; */
     border-color: rgb(0, 147, 123) !important;
 }
 
