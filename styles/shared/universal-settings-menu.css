@@ -191,7 +191,7 @@
         padding: 10px !important;
         margin: 4px 0 !important;
         font-size: 13px !important;
-        width: 100%;
+        /* width: 100%; */
     }
 
     .settings-option span {
@@ -493,7 +493,7 @@ body.dark-mode .settings-option:hover {
         padding: 12px !important;
         margin: 5px 0 !important;
         font-size: 14px !important;
-        width: 100%;
+        /* width: 100%; */
     }
 
     .settings-option img {
