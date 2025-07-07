@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="../styles/judicial-rulings-links/header.css">
     <link rel="stylesheet" href="../styles/faq/footer.css">
     <link rel="stylesheet" href="../styles/login-modal.css">
-    <link rel="stylesheet" href="../styles/home/settings.css">
+    <!-- <link rel="stylesheet" href="../styles/home/settings.css"> -->
     <link rel="stylesheet" href="../styles/subpage.css">
     <link rel="stylesheet" href="../styles/faq/footer.css">
-    <link rel="stylesheet" href="../styles/home/settings.css">
+    <!-- <link rel="stylesheet" href="../styles/home/settings.css"> -->
     <link rel="stylesheet" href="../styles/search-popup.css">
     <link rel="stylesheet" href="../styles/login-modal.css">
     <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
@@ -946,8 +946,8 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td,
             margin-left: auto;
             margin-right: auto;
         ">
-                         <div style="display: flex; align-items: right; justify-content: right; cursor: pointer;">
-                <svg width="16" height="16" style="margin-left: 10px;" viewBox="0 0 24 24" fill="none">
+                         <div style="display: flex; align-items: right; justify-content: right; cursor: pointer;" id="arrowToggleSection">
+                <svg id="arrowToggleBtn" width="16" height="16" style="margin-left: 10px; cursor:pointer;" viewBox="0 0 24 24" fill="none">
                     <path d="M6 9L12 15L18 9"  stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span style="
@@ -960,225 +960,226 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td,
                     text-align: center;
                 ">بطاقة التعريف للتشريع</span>
             </div>
-            
-            <div style="padding: 0;">
-                <p style="
-                    color: #ff7a45; 
-                    text-align: center; 
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 700; 
-                    font-size: 18px;
-                    line-height: 140%;
-                    letter-spacing: 0%;
-                    margin-bottom: 25px;
-                ">النظام وفقاً لآخر تعديل</p>
-                
-                <p style="
-                    color: #121212; 
-                    text-align: center; 
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 700; 
-                    font-size: 16px;
-                    line-height: 140%;
-                    letter-spacing: 0%;
-                    margin-bottom: 40px;
-                ">أمر ملكي رقم أ / 13 بتاريخ 3/3/1414 هـ بشأن نظام مجلس الوزراء</p>
-                
-                <p style="
-                    color: #158885; 
-                    text-align: right; 
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 700; 
-                    font-size: 16px;
-                    line-height: 160%;
-                    letter-spacing: 0%;
-                    margin-bottom: 20px;
-                ">بعون الله تعالى</p>
-                
-                <p style="
-                    color: #121212; 
-                    text-align: right; 
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 700; 
-                    font-size: 16px;
-                    line-height: 160%;
-                    letter-spacing: 0%;
-                    margin-bottom: 30px;
-                ">نحن فهد بن عبد العزيز آل سعود ملك المملكة العربية السعودية</p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
+            <div id="toggleSectionContent">
+                <div style="padding: 0;">
+                    <p style="
+                        color: #ff7a45; 
+                        text-align: center; 
+                        font-family: 'Droid Arabic Kufi', sans-serif !important;
+                        font-weight: 700; 
+                        font-size: 18px;
+                        line-height: 140%;
+                        letter-spacing: 0%;
+                        margin-bottom: 25px;
+                    ">النظام وفقاً لآخر تعديل</p>
+                    
+                    <p style="
+                        color: #121212; 
+                        text-align: center; 
+                        font-family: 'Droid Arabic Kufi', sans-serif !important;
+                        font-weight: 700; 
+                        font-size: 16px;
+                        line-height: 140%;
+                        letter-spacing: 0%;
+                        margin-bottom: 40px;
+                    ">أمر ملكي رقم أ / 13 بتاريخ 3/3/1414 هـ بشأن نظام مجلس الوزراء</p>
+                    
+                    <p style="
+                        color: #158885; 
+                        text-align: right; 
+                        font-family: 'Droid Arabic Kufi', sans-serif !important;
+                        font-weight: 700; 
+                        font-size: 16px;
+                        line-height: 160%;
+                        letter-spacing: 0%;
+                        margin-bottom: 20px;
+                    ">بعون الله تعالى</p>
+                    
+                    <p style="
+                        color: #121212; 
+                        text-align: right; 
+                        font-family: 'Droid Arabic Kufi', sans-serif !important;
+                        font-weight: 700; 
+                        font-size: 16px;
+                        line-height: 160%;
+                        letter-spacing: 0%;
+                        margin-bottom: 30px;
+                    ">نحن فهد بن عبد العزيز آل سعود ملك المملكة العربية السعودية</p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        ">وبعد الاطلاع على</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-underline-offset: 0%;
+                            text-decoration-thickness: 0%;
+                        "> النظام الأساسي للحكم الصادر بالأمر الملكي رقم 90 بتاريخ 27/8/1412هـ</span>
+                    </p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        ">وبعد الاطلاع على</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-underline-offset: 0%;
+                            text-decoration-thickness: 0%;
+                        "> نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته</span>
+                    </p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        ">وبعد الاطلاع على</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400; 
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-underline-offset: 0%;
+                            text-decoration-thickness: 0%;
+                        "> نظام مجلس الشورى الصادر بالأمر الملكي رقم (91/1) وتاريخ 27/8/1412هـ</span>
+                    </p>
+                    
+                    <p style="
+                        text-align: right; 
+                        margin-bottom: 30px;
                         font-family: 'Droid Arabic Kufi', sans-serif !important;
                         font-weight: 400; 
                         font-size: 16px;
                         line-height: 180%;
                         letter-spacing: 0%;
-                    ">وبعد الاطلاع على</span>
-                    <span style="
+                    ">وبعد الاطلاع على المرسوم الملكي رقم م/23 وتاريخ 26/8/1412هـ</p>
+                    
+                    <p style="
+                        color: #E66B2E; 
+                        text-align: center; 
                         font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400; 
+                        font-weight: 700; 
                         font-size: 16px;
-                        line-height: 180%;
+                        line-height: 160%;
                         letter-spacing: 0%;
-                        text-decoration: underline;
-                        text-decoration-style: solid;
-                        text-underline-offset: 0%;
-                        text-decoration-thickness: 0%;
-                    "> النظام الأساسي للحكم الصادر بالأمر الملكي رقم 90 بتاريخ 27/8/1412هـ</span>
-                </p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400; 
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    ">وبعد الاطلاع على</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400; 
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        text-decoration: underline;
-                        text-decoration-style: solid;
-                        text-underline-offset: 0%;
-                        text-decoration-thickness: 0%;
-                    "> نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته</span>
-                </p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400; 
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    ">وبعد الاطلاع على</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400; 
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        text-decoration: underline;
-                        text-decoration-style: solid;
-                        text-underline-offset: 0%;
-                        text-decoration-thickness: 0%;
-                    "> نظام مجلس الشورى الصادر بالأمر الملكي رقم (91/1) وتاريخ 27/8/1412هـ</span>
-                </p>
-                
-                <p style="
-                    text-align: right; 
-                    margin-bottom: 30px;
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 400; 
-                    font-size: 16px;
-                    line-height: 180%;
-                    letter-spacing: 0%;
-                ">وبعد الاطلاع على المرسوم الملكي رقم م/23 وتاريخ 26/8/1412هـ</p>
-                
-                <p style="
-                    color: #E66B2E; 
-                    text-align: center; 
-                    font-family: 'Droid Arabic Kufi', sans-serif !important;
-                    font-weight: 700; 
-                    font-size: 16px;
-                    line-height: 160%;
-                    letter-spacing: 0%;
-                    margin-bottom: 35px;
-                ">أمرنا بما هو آت</p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        color: #121212;
-                    ">أولاً:</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    "> إصدار نظام مجلس الوزراء بالصيغة المرفقة بهذا.</span>
-                </p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        color: #121212;
-                    ">ثانياً:</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    "> يحل هذا النظام محل </span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        text-decoration: underline;
-                        text-decoration-style: solid;
-                        text-decoration-offset: 0%;
-                        text-decoration-thickness: 0%;
-                    ">نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    ">.</span>
-                </p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        color: #121212;
-                    ">ثالثاً:</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    "> يستمر العمل بكل الأنظمة والأوامر والقرارات المعمول بها عند نفاذ هذا النظام حتى تعدل بما يتفق معه.</span>
-                </p>
-                
-                <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                        color: #121212;
-                    ">رابعاً:</span>
-                    <span style="
-                        font-family: 'Droid Arabic Kufi', sans-serif !important;
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 180%;
-                        letter-spacing: 0%;
-                    "> ينشر هذا النظام في الجريدة الرسمية ويعمل به بعد تسعين يوماً من بداية مدة مجلس الشورى المحددة في الأمر الملكي الصادر بتكوينه لأول مرة.</span>
-                </p>
+                        margin-bottom: 35px;
+                    ">أمرنا بما هو آت</p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            color: #121212;
+                        ">أولاً:</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        "> إصدار نظام مجلس الوزراء بالصيغة المرفقة بهذا.</span>
+                    </p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            color: #121212;
+                        ">ثانياً:</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        "> يحل هذا النظام محل </span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-decoration-offset: 0%;
+                            text-decoration-thickness: 0%;
+                        ">نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        ">.</span>
+                    </p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            color: #121212;
+                        ">ثالثاً:</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        "> يستمر العمل بكل الأنظمة والأوامر والقرارات المعمول بها عند نفاذ هذا النظام حتى تعدل بما يتفق معه.</span>
+                    </p>
+                    
+                    <p style="text-align: right; margin-bottom: 20px; line-height: 180%;">
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                            color: #121212;
+                        ">رابعاً:</span>
+                        <span style="
+                            font-family: 'Droid Arabic Kufi', sans-serif !important;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 180%;
+                            letter-spacing: 0%;
+                        "> ينشر هذا النظام في الجريدة الرسمية ويعمل به بعد تسعين يوماً من بداية مدة مجلس الشورى المحددة في الأمر الملكي الصادر بتكوينه لأول مرة.</span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -1578,6 +1579,27 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td,
     <script src="../scripts/subpages-dark-contrast.js"></script>
     <script src="../scripts/contrast-submenu-fix.js"></script>
     <script src="../scripts/unified-settings.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var arrowBtn = document.getElementById('arrowToggleBtn');
+        var section = document.getElementById('toggleSectionContent');
+        var isOpen = true;
+        arrowBtn.style.transition = 'transform 0.3s';
+        arrowBtn.style.transformOrigin = '50% 50%';
+        arrowBtn.style.cursor = 'pointer';
+        arrowBtn.addEventListener('click', function() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                section.style.display = 'block';
+                arrowBtn.style.transform = 'rotate(0deg)';
+            } else {
+                section.style.display = 'none';
+                arrowBtn.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+    </script>
 
 </body>
 </html>

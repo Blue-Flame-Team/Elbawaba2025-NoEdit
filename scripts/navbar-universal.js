@@ -390,30 +390,9 @@ function setupHamburgerMenu() {
 // تفعيل أزرار الزوم
 // ============================================
 function setupZoomButtons() {
-    const zoomInButtons = document.querySelectorAll('.zoom-in-btn, button[onclick*="changeFontSize(10)"]');
-    const zoomOutButtons = document.querySelectorAll('.zoom-out-btn, button[onclick*="changeFontSize(-10)"]');
-    
-    zoomInButtons.forEach(btn => {
-        if (!btn.hasAttribute('data-zoom-setup')) {
-            btn.removeAttribute('onclick');
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                changeFontSize(10);
-            });
-            btn.setAttribute('data-zoom-setup', 'true');
-        }
-    });
-    
-    zoomOutButtons.forEach(btn => {
-        if (!btn.hasAttribute('data-zoom-setup')) {
-            btn.removeAttribute('onclick');
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                changeFontSize(-10);
-            });
-            btn.setAttribute('data-zoom-setup', 'true');
-        }
-    });
+    // This function is now handled by unified-zoom.js
+    // Keeping it as a no-op for backwards compatibility
+    console.log('Zoom buttons setup via unified-zoom.js');
 }
 
 // ============================================
@@ -473,23 +452,6 @@ function toggleMobileMenu() {
         overlay.style.display = isVisible ? 'none' : 'block';
         document.body.style.overflow = isVisible ? 'auto' : 'hidden';
     }
-}
-
-// ============================================
-// دالة تغيير حجم الخط
-// ============================================
-function changeFontSize(change) {
-    const elementsToResize = document.querySelectorAll('[data-original-font-size]');
-    
-    elementsToResize.forEach(element => {
-        const currentSize = parseInt(window.getComputedStyle(element).fontSize);
-        const newSize = currentSize + change;
-        
-        if (newSize >= 10 && newSize <= 30) {
-            element.style.fontSize = newSize + 'px';
-        }
-    });
-    
 }
 
 // ============================================

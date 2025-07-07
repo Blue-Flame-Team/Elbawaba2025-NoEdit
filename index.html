@@ -301,6 +301,9 @@ body.dark-contrast {
 }
 </style>
 <script src="scripts/mobile-search-functionality.js"></script>
+    <!-- Zoom Functionality -->
+    <link rel="stylesheet" href="styles/shared/zoom-styles.css">
+    <script src="scripts/unified-zoom.js"></script>
 </head>
 <body>
     <div class="mobile-menu-overlay">
@@ -362,12 +365,20 @@ body.dark-contrast {
                         </div>
                         
                         <!-- أيقونات التكبير والتصغير -->
-                        <div class="zoom-group">
-                            <button class="icon-btn zoom-out-btn decrease-font-size" title="تصغير النص" data-original-font-size="16">
-                                <img src="assets/icons/search-zoom-out.png" alt="تصغير">
+                        <div class="zoom-group" data-zoom-group="main" id="main-zoom-group">
+                            <button class="icon-btn zoom-out-btn decrease-font-size" 
+                                    title="تصغير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="decrease"
+                                    data-debug-id="zoom-out-main">
+                                <img src="assets/icons/search-zoom-out.svg" alt="تصغير">
                             </button>
-                            <button class="icon-btn zoom-in-btn increase-font-size" title="تكبير النص" data-original-font-size="16">
-                                <img src="assets/icons/search-zoom-in.png" alt="تكبير">
+                            <button class="icon-btn zoom-in-btn increase-font-size" 
+                                    title="تكبير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="increase"
+                                    data-debug-id="zoom-in-main">
+                                <img src="assets/icons/search-zoom-in.svg" alt="تكبير">
                             </button>
                         </div>
                         
@@ -424,11 +435,19 @@ body.dark-contrast {
                             </span>
                             <span class="questions-text">الأسئلة الشائعة</span>
                         </a>
-                        <div class="zoom-group">
-                            <button class="icon-btn zoom-out-btn decrease-font-size" title="تصغير النص" data-original-font-size="16">
+                        <div class="zoom-group" data-zoom-group="main" id="main-zoom-group">
+                            <button class="icon-btn zoom-out-btn decrease-font-size" 
+                                    title="تصغير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="decrease"
+                                    data-debug-id="zoom-out-main">
                                 <img src="assets/icons/search-zoom-out.svg" alt="تصغير">
                             </button>
-                            <button class="icon-btn zoom-in-btn increase-font-size" title="تكبير النص" data-original-font-size="16">
+                            <button class="icon-btn zoom-in-btn increase-font-size" 
+                                    title="تكبير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="increase"
+                                    data-debug-id="zoom-in-main">
                                 <img src="assets/icons/search-zoom-in.svg" alt="تكبير">
                             </button>
                         </div>
@@ -3985,5 +4004,55 @@ body.dark-contrast {
      <!-- auth system -->
      <script src="scripts/auth-system.js"></script>
     <script src="scripts/enhanced-country-dropdown.js"></script>
+    <!-- Zoom Diagnostic Script -->
+    <script src="scripts/zoom-diagnostic.js"></script>
+    <!-- Simple Zoom Script -->
+    <script src="scripts/simple-zoom.js"></script>
+
+    <script>
+    (function() {
+        // إعدادات الزوم
+        let fontSize = 16;
+        const minFont = 12;
+        const maxFont = 32;
+
+        // دالة لتطبيق الحجم على body فقط
+        function applyFontSize() {
+            document.body.style.fontSize = fontSize + 'px';
+            console.log('Font size set to', fontSize);
+        }
+
+        // دوال التكبير والتصغير
+        function zoomIn() {
+            if (fontSize < maxFont) {
+                fontSize += 2;
+                applyFontSize();
+            }
+        }
+        function zoomOut() {
+            if (fontSize > minFont) {
+                fontSize -= 2;
+                applyFontSize();
+            }
+        }
+
+        // ربط الأزرار
+        document.querySelectorAll('.zoom-in-btn, .increase-font-size').forEach(btn => {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                zoomIn();
+            };
+        });
+        document.querySelectorAll('.zoom-out-btn, .decrease-font-size').forEach(btn => {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                zoomOut();
+            };
+        });
+
+        // تطبيق الحجم الافتراضي عند التحميل
+        applyFontSize();
+    })();
+    </script>
 </body>
 </html>
