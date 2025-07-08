@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const step = 10;     // مقدار التغيير في كل مرة
     
     // تطبيق الحجم المحفوظ عند بدء التحميل
-    applyTextSize(currentSize);
+    // applyTextSize(currentSize);
     
     // البحث عن جميع أزرار التكبير والتصغير في الصفحة
     const zoomInButtons = document.querySelectorAll('.zoom-in-btn');
@@ -52,23 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.fontSize = size + '%';
         
         // تحديث حالة الأزرار
-        updateButtonStates();
+        // updateButtonStates();
         
     }
     
     // دالة تحديث حالة الأزرار
     function updateButtonStates() {
-        zoomInButtons.forEach(btn => {
-            if (currentSize >= maxSize) {
-                btn.classList.add('disabled');
-                btn.style.opacity = '0.5';
-                btn.style.cursor = 'not-allowed';
-            } else {
-                btn.classList.remove('disabled');
-                btn.style.opacity = '1';
-                btn.style.cursor = 'pointer';
-            }
-        });
+        // zoomInButtons.forEach(btn => {
+        //     if (currentSize >= maxSize) {
+        //         btn.classList.add('disabled');
+        //         btn.style.opacity = '0.5';
+        //         btn.style.cursor = 'not-allowed';
+        //     } else {
+        //         btn.classList.remove('disabled');
+        //         btn.style.opacity = '1';
+        //         btn.style.cursor = 'pointer';
+        //     }
+        // });
         
         zoomOutButtons.forEach(btn => {
             if (currentSize <= minSize) {
