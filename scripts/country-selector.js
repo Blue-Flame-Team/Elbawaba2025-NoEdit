@@ -58,23 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // dropdown.innerHTML = '';
 
-        // COUNTRIES.forEach(country => {
-        //     const countryItem = document.createElement('div');
-        //     countryItem.className = 'country-item';
-        //     countryItem.style.cssText = `
-        //         display: flex;
-        //         align-items: center;
-        //         padding: 10px;
-        //         cursor: pointer;
-        //         transition: background-color 0.3s ease;
-        //     `;
+        COUNTRIES.forEach(country => {
+            const countryItem = document.createElement('div');
+            countryItem.className = 'country-item';
+            countryItem.style.cssText = `
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            `;
 
             const imgPath = fixImagePath(country.flag);
-            // countryItem.innerHTML = `
-            //     <img src="${imgPath}" alt="${country.name}" style="width: 24px; height: 18px; margin-left: 10px; object-fit: cover;">
-            //     <span style="flex-grow: 1;">${country.name}</span>
-            //     <span class="country-code">${country.code}</span>
-            // `;
+            countryItem.innerHTML = `
+                <img src="${imgPath}" alt="${country.name}" style="width: 24px; height: 18px; margin-left: 10px; object-fit: cover;">
+                <span style="flex-grow: 1;">${country.name}</span>
+                <span class="country-code">${country.code}</span>
+            `;
 
             countryItem.addEventListener('click', (e) => {
                 e.stopPropagation();
