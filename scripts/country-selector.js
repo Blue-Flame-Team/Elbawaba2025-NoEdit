@@ -3,18 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // قائمة الدول المدعومة مع تحديث المسارات
     const COUNTRIES = [
-        { name: 'مصر', code: '+20', flag: '/assets/icons/flag-for-flag-egypt-svgrepo-com 1.svg' },
-        { name: 'السعودية', code: '+966', flag: '/assets/icons/saudi-flag.svg' },
-        { name: 'الإمارات', code: '+971', flag: '/assets/icons/uae-flag.svg' }
+        { name: 'مصر', code: '+20', flag: '../assets/icons/flag-for-flag-egypt-svgrepo-com 1.svg' },
+        { name: 'السعودية', code: '+966', flag: '../assets/icons/saudi-flag.svg' },
+        { name: 'الإمارات', code: '+971', flag: '../assets/icons/uae-flag.svg' }
     ];
 
     // تصحيح مسارات الصور بناءً على الموقع الحالي
-    function fixImagePath(path) {
-        if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-            return path.replace('../', '');
-        }
-        return path;
-    }
+    // function fixImagePath(path) {
+    //     if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+    //         return path.replace('../', '');
+    //     }
+    //     return path;
+    // }
 
     // دالة إنشاء وإعداد محدد الدولة
     function setupCountryDropdown(container) {
