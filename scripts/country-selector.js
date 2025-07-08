@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // تهيئة أولية
-    // initializeCountrySelectors();
+    initializeCountrySelectors();
 
     // إعادة التهيئة عند فتح النوافذ المنبثقة
     document.addEventListener('click', function(e) {
