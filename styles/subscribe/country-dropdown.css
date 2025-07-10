@@ -23,9 +23,13 @@
 }
 
 .country-dropdown-trigger .flag-img {
-    width: 24px;
-    height: 16px;
-    margin-right: 5px;
+    width: 28px;
+    height: 21px;
+    margin-right: 8px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
 .country-dropdown-trigger .country-code {
@@ -72,9 +76,13 @@
 }
 
 .country-option .flag-img {
-    width: 24px;
-    height: 16px;
-    margin-right: 10px;
+    width: 28px;
+    height: 21px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
 .country-option .country-name {

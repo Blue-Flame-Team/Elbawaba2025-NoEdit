@@ -80,10 +80,11 @@
 /* قسم تسجيل الدخول برقم الهاتف */
 .phone-input-row {
     display: flex;
-    gap: 6px;
+    gap: 12px;
     margin-bottom: 20px;
     flex-direction: row-reverse;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin-bottom: 30px !important;
 }
@@ -113,10 +114,129 @@
     background: white;
 }
 
-.country-select .flag-img {
-    width: 20px;
-    height: 15px;
+/* تنسيق خاص للـ country-code-select في phone-input-row */
+.phone-input-row .country-code-select {
+    width: 95px;
+    height: 51.42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 8px;
+}
+
+.phone-input-row .country-code-select:hover {
+    border-color: #00937B;
+    box-shadow: 0 0 0 2px rgba(0, 147, 123, 0.1);
+}
+
+.phone-input-row .country-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phone-input-row .country-flag .flag-img {
+    width: 28px;
+    height: 21px;
     object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: block;
+}
+
+.phone-input-row .country-code-select .code {
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* القائمة المنسدلة للدول في phone-input-row */
+.phone-input-row .country-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 280px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: none;
+    margin-top: 8px;
+}
+
+.phone-input-row .country-dropdown.show {
+    display: block;
+}
+
+.phone-input-row .country-dropdown .country-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 12px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.phone-input-row .country-dropdown .country-item:last-child {
+    border-bottom: none;
+}
+
+.phone-input-row .country-dropdown .country-item:hover {
+    background-color: #f0f7ff;
+    border-left: 3px solid #00937B;
+    padding-left: 13px;
+}
+
+.phone-input-row .country-dropdown .country-item .flag-img {
+    width: 28px;
+    height: 21px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.phone-input-row .country-dropdown .country-item .country-name {
+    flex: 1;
+    font-size: 15px;
+    color: #333;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.phone-input-row .country-dropdown .country-item .country-code {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.country-select .flag-img {
+    width: 24px;
+    height: 18px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    flex-shrink: 0;
 }
 
 .country-select .code {
@@ -135,9 +255,12 @@
 .country-code-select .selected-country {
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    background: white;
+    gap: 10px;
 }
 
 .country-code-select .dropdown-arrow {
@@ -184,10 +307,13 @@
 }
 
 .country-dropdown .country-item img {
-    width: 24px;
-    height: 18px;
-    margin-left: 10px;
+    width: 28px;
+    height: 21px;
+    margin-left: 12px;
     object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
 }
 
 .country-dropdown .country-item span {
@@ -589,15 +715,15 @@
 /* تحسين التأثير للموبايل */
 @media (max-width: 480px), (max-width: 760px) {
     .login-modal .country-code-select {
-        width: 65px !important;
+        width: 75px !important;
         height: 42px !important;
         border-radius: 6px !important;
-        padding: 4px !important;
+        padding: 6px !important;
         border: 0.8px solid #1212124F !important;
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 2px !important;
+        justify-content: space-between !important;
+        gap: 4px !important;
         box-sizing: border-box !important;
         background: #fff !important;
     }
@@ -605,25 +731,30 @@
     .login-modal .country-flag {
         display: flex !important;
         align-items: center !important;
+        justify-content: center !important;
         margin: 0 !important;
         padding: 0 !important;
+        flex-shrink: 0 !important;
     }
     
     .login-modal .country-flag .flag-img {
-        width: 16px !important;
-        height: 11px !important;
-        object-fit: contain !important;
+        width: 20px !important;
+        height: 15px !important;
+        object-fit: cover !important;
         display: block !important;
+        border-radius: 2px !important;
+        border: 1px solid #eee !important;
     }
     
     .login-modal .country-code-select .code {
         font-family: 'Droid Arabic Kufi', sans-serif !important;
-        font-size: 10px !important;
-        font-weight: 500 !important;
-        color: #666 !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        color: #333 !important;
         margin: 0 !important;
         padding: 0 !important;
         white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
 
     .login-modal-content {
@@ -650,12 +781,42 @@
     .login-modal .phone-input-row {
         width: 295px !important;
         margin: 0 auto !important;
-        gap: 8px !important;
+        gap: 10px !important;
         display: flex !important;
         flex-direction: row-reverse !important;
-        align-items: center !important;
+        align-items: stretch !important;
         justify-content: center !important;
         margin-bottom: 20px !important;
+    }
+    
+    /* تحسين القائمة المنسدلة للموبايل */
+    .login-modal .phone-input-row .country-dropdown {
+        width: 250px !important;
+        max-height: 180px !important;
+        margin-top: 5px !important;
+        border-radius: 6px !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .login-modal .phone-input-row .country-dropdown .country-item {
+        padding: 10px 12px !important;
+        gap: 8px !important;
+        min-height: 45px !important;
+    }
+    
+    .login-modal .phone-input-row .country-dropdown .country-item .flag-img {
+        width: 24px !important;
+        height: 18px !important;
+    }
+    
+    .login-modal .phone-input-row .country-dropdown .country-item .country-name {
+        font-size: 14px !important;
+        margin: 0 6px !important;
+    }
+    
+    .login-modal .phone-input-row .country-dropdown .country-item .country-code {
+        font-size: 12px !important;
+        padding: 1px 4px !important;
     }
     .login-modal .phone-field {
         width: 100% !important;
