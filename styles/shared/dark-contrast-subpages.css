@@ -520,7 +520,19 @@ body.dark-contrast .services-container img[src*="book"] {
     font-weight: bold !important;
 }
 
-/* تأكيد تجاوز الأنماط الافتراضية */
+/* قوة قصوى - جميع القوائم المنسدلة أسوداء دائماً */
+.dropdown-menu,
+.dropdown-menu *,
+.dropdown-menu a,
+.menu-item.dropdown .dropdown-menu,
+.menu-item.dropdown .dropdown-menu *,
+.menu-item.dropdown .dropdown-menu a,
+.dark-mode .dropdown-menu,
+.dark-mode .dropdown-menu *,
+.dark-mode .dropdown-menu a,
+.dark-mode .menu-item.dropdown .dropdown-menu,
+.dark-mode .menu-item.dropdown .dropdown-menu *,
+.dark-mode .menu-item.dropdown .dropdown-menu a,
 .dark-mode .menu-item.dropdown .dropdown-menu a[style*="color"],
 .dark-mode .menu-item.dropdown .dropdown-menu a[style*="background-color"] {
     color: #000000 !important;

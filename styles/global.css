@@ -4,6 +4,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 /* الخط الثالث Semantic UI يتم تضمينه عن طريق CDN في ملفات HTML */
 
+/* ============================================================
+   قاعدة عامة عالية الأولوية - القوائم المنسدلة أسوداء دائماً
+   ============================================================ */
+.dropdown-menu,
+.dropdown-menu *,
+.dropdown-menu a,
+.dropdown-menu a:link,
+.dropdown-menu a:visited,
+.dropdown-menu a:active,
+.dropdown-menu[style],
+.dropdown-menu[style*="color"],
+.dropdown-menu[style*="white"],
+.dropdown-menu[style*="color: white"],
+.dropdown-menu[style*="color: white !important"],
+.dropdown-menu[style*="color: white !important; display: none"],
+.dropdown-menu[style*="display: none; color: white !important"] {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    color: #000000 !important;
+    background-color: #f0f0f0 !important;
+}
+
+/* قوة إضافية للقوائم المنسدلة في جميع الحالات */
+html .dropdown-menu,
+html .dropdown-menu *,
+html .dropdown-menu a,
+html .dropdown-menu span,
+html .dropdown-menu div,
+body .dropdown-menu,
+body .dropdown-menu *,
+body .dropdown-menu a,
+body .dropdown-menu span,
+body .dropdown-menu div {
+    color: #000000 !important;
+}
+
+/* حماية ضد جميع أوضاع التباين */
+body.dark-mode .dropdown-menu,
+body.dark-mode .dropdown-menu *,
+body.dark-contrast .dropdown-menu,
+body.dark-contrast .dropdown-menu *,
+body.light-mode .dropdown-menu,
+body.light-mode .dropdown-menu *,
+body.light-contrast .dropdown-menu,
+body.light-contrast .dropdown-menu *,
+.dark-mode .dropdown-menu,
+.dark-mode .dropdown-menu *,
+.dark-contrast .dropdown-menu,
+.dark-contrast .dropdown-menu *,
+.light-mode .dropdown-menu,
+.light-mode .dropdown-menu *,
+.light-contrast .dropdown-menu,
+.light-contrast .dropdown-menu * {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
 :root {
     --primary-color: #17a891;
     --secondary-color: #24516c;
@@ -907,4 +968,86 @@ h6 { font-size: 1.1rem; }
 .country-code-select.active {
     background-color: rgba(0, 147, 123, 0.15) !important;
     border-color: #00937B !important;
+}
+
+/* ============================================================
+   القاعدة النهائية الأقوى - القوائم المنسدلة أسوداء دائماً
+   هذه القاعدة تتغلب على أي قواعد أخرى في الموقع
+   ============================================================ */
+.dropdown-menu,
+.dropdown-menu a,
+.dropdown-menu span,
+.dropdown-menu div,
+.dropdown-menu li,
+.dropdown-menu *,
+html .dropdown-menu,
+html .dropdown-menu a,
+html .dropdown-menu span,
+html .dropdown-menu div,
+html .dropdown-menu li,
+html .dropdown-menu *,
+body .dropdown-menu,
+body .dropdown-menu a,
+body .dropdown-menu span,
+body .dropdown-menu div,
+body .dropdown-menu li,
+body .dropdown-menu *,
+html body .dropdown-menu,
+html body .dropdown-menu a,
+html body .dropdown-menu span,
+html body .dropdown-menu div,
+html body .dropdown-menu li,
+html body .dropdown-menu *,
+body.dark-mode .dropdown-menu,
+body.dark-mode .dropdown-menu a,
+body.dark-mode .dropdown-menu span,
+body.dark-mode .dropdown-menu div,
+body.dark-mode .dropdown-menu li,
+body.dark-mode .dropdown-menu *,
+body.dark-contrast .dropdown-menu,
+body.dark-contrast .dropdown-menu a,
+body.dark-contrast .dropdown-menu span,
+body.dark-contrast .dropdown-menu div,
+body.dark-contrast .dropdown-menu li,
+body.dark-contrast .dropdown-menu *,
+.dark-mode .dropdown-menu,
+.dark-mode .dropdown-menu a,
+.dark-mode .dropdown-menu span,
+.dark-mode .dropdown-menu div,
+.dark-mode .dropdown-menu li,
+.dark-mode .dropdown-menu *,
+.dark-contrast .dropdown-menu,
+.dark-contrast .dropdown-menu a,
+.dark-contrast .dropdown-menu span,
+.dark-contrast .dropdown-menu div,
+.dark-contrast .dropdown-menu li,
+.dark-contrast .dropdown-menu * {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+.dropdown-menu,
+body.dark-mode .dropdown-menu,
+body.dark-contrast .dropdown-menu,
+.dark-mode .dropdown-menu,
+.dark-contrast .dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #ddd !important;
+}
+
+/* في جميع أوضاع التباين والثيمات - قوة إضافية */
+* .dropdown-menu,
+* .dropdown-menu a,
+* .dropdown-menu span,
+* .dropdown-menu div,
+* .dropdown-menu li,
+* .dropdown-menu *,
+*:not(script):not(style) .dropdown-menu,
+*:not(script):not(style) .dropdown-menu a,
+*:not(script):not(style) .dropdown-menu span,
+*:not(script):not(style) .dropdown-menu div,
+*:not(script):not(style) .dropdown-menu li,
+*:not(script):not(style) .dropdown-menu * {
+    color: #000000 !important;
+    text-shadow: none !important;
 }

@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         applyServiceTabFix();
     }
     
-    // دالة إصلاح هوفر القوائم المنسدلة
+    // دالة إصلاح هوفر القوائم المنسدلة - مُعدلة لتبقى سوداء دائماً
     function applyDropdownHoverFix() {
         
         const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
@@ -128,22 +128,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.dataset.originalBg = link.style.backgroundColor || '';
             }
             
-            // إضافة أحداث الهوفر
+            // إضافة أحداث الهوفر - لكن القوائم المنسدلة تبقى سوداء دائماً
             link.addEventListener('mouseenter', function() {
-                if (document.body.classList.contains('dark-mode')) {
-                    this.style.backgroundColor = '#28a745';
-                    this.style.color = '#ffffff';
-                    this.style.fontWeight = 'bold';
-                }
+                // القوائم المنسدلة تبقى سوداء دائماً
+                this.style.backgroundColor = '#f0f0f0';
+                this.style.color = '#000000';
+                this.style.fontWeight = 'normal';
             });
             
             link.addEventListener('mouseleave', function() {
-                if (document.body.classList.contains('dark-mode')) {
-                    this.style.backgroundColor = 'transparent';
-                    this.style.color = '#333333';
-                    this.style.fontWeight = 'normal';
-                }
+                // القوائم المنسدلة تبقى سوداء دائماً  
+                this.style.backgroundColor = 'transparent';
+                this.style.color = '#000000';
+                this.style.fontWeight = 'normal';
             });
+            
+            // فرض اللون الأسود فوراً
+            link.style.color = '#000000';
+            link.style.backgroundColor = 'transparent';
         });
     }
     
@@ -598,8 +600,44 @@ document.addEventListener('DOMContentLoaded', function() {
     contrastButtons.forEach(button => {
         button.addEventListener('click', function() {
             setTimeout(applyDarkModeToSpecificTexts, 100);
+            setTimeout(forceDropdownBlackColor, 150); // حماية إضافية للقوائم المنسدلة
         });
     });
 
+    // حماية نهائية - فرض القوائم المنسدلة سوداء دائماً
+    function forceDropdownBlackColor() {
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu, .dropdown-menu a, .dropdown-menu *');
+        dropdownMenus.forEach(element => {
+            element.style.setProperty('color', '#000000', 'important');
+            if (element.classList.contains('dropdown-menu')) {
+                element.style.setProperty('background-color', '#ffffff', 'important');
+            }
+        });
+    }
+    
+    // تطبيق فوري للحماية
+    setTimeout(forceDropdownBlackColor, 50);
+    setTimeout(forceDropdownBlackColor, 200);
+    setTimeout(forceDropdownBlackColor, 500);
+    
+    // مراقبة مستمرة للقوائم المنسدلة
+    const dropdownObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' || mutation.type === 'childList') {
+                const target = mutation.target;
+                if (target.classList && (target.classList.contains('dropdown-menu') || target.closest('.dropdown-menu'))) {
+                    forceDropdownBlackColor();
+                }
+            }
+        });
+    });
+    
+    // بدء مراقبة القوائم المنسدلة
+    dropdownObserver.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+        attributeFilter: ['style', 'class']
+    });
     
 }); 
