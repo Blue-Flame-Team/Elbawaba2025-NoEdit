@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار شريط البحث</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/search-popup.css">
+    <style>
+        body {
+            font-family: 'Droid Arabic Kufi', sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background-color: #00a19a;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'Droid Arabic Kufi', sans-serif;
+        }
+        .test-button:hover {
+            background-color: #008a7a;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>اختبار شريط البحث</h1>
+        <p>هذا اختبار للتأكد من أن شريط البحث يعمل بشكل صحيح</p>
+        
+        <div class="main-icons-group">
+            <button class="test-button search-btn">اختبار زر البحث</button>
+        </div>
+        
+        <div class="mobile-icons">
+            <button class="test-button search-btn">اختبار زر البحث (موبايل)</button>
+        </div>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <h2>التعليمات:</h2>
+        <ol>
+            <li>اضغط على أي من أزرار الاختبار أعلاه</li>
+            <li>يجب أن تظهر النافذة المنبثقة للبحث</li>
+            <li>يجب أن تحتوي على حقل إدخال وزرين (بحث ومحرك البحث)</li>
+            <li>اكتب شيئاً في حقل البحث واضغط "بحث"</li>
+            <li>يجب أن تنتقل إلى صفحة البحث</li>
+        </ol>
+    </div>
+    
+    <script src="scripts/search-popup.js"></script>
+    <script>
+        // اختبار إضافي للتأكد من أن الوظائف تعمل
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('status');
+            
+            // التحقق من وجود الملفات المطلوبة
+            setTimeout(() => {
+                const overlay = document.getElementById('searchPopupOverlay');
+                if (overlay) {
+                    statusDiv.textContent = '✅ تم تحميل شريط البحث بنجاح';
+                    statusDiv.className = 'status success';
+                    statusDiv.style.display = 'block';
+                } else {
+                    statusDiv.textContent = '❌ خطأ في تحميل شريط البحث';
+                    statusDiv.className = 'status error';
+                    statusDiv.style.display = 'block';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

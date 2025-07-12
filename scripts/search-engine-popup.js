@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Redirect to search results page
-            window.location.href = `http://127.0.0.1:5504/pages/general-search-engine.html?${params.toString()}`;
+            window.location.href = `pages/general-search-engine.html?${params.toString()}`;
         }
     }
     

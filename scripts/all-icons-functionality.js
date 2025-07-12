@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // معالجة زر محرك البحث
         engineBtn.addEventListener('click', function() {
-            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
+                            window.location.href = 'pages/general-search-engine.html';
         });
         
         // معالجة مفتاح Enter في حقل البحث

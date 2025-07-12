@@ -1,7 +1,7 @@
 // Search Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const searchBtn = document.querySelector('.main-icons-group .search-btn');
+    // Elements - support both desktop and mobile search buttons
+    const searchButtons = document.querySelectorAll('.main-icons-group .search-btn, .mobile-icons .search-btn');
     let searchPopupOverlay = document.getElementById('searchPopupOverlay');
     
     // Create search popup if it doesn't exist
@@ -50,16 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Toggle search popup when search button is clicked
-    if (searchBtn) {
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            searchPopupOverlay.style.display = 'flex';
-            setTimeout(() => {
-                document.querySelector('.search-popup').classList.add('active');
-                document.querySelector('.search-popup-input').focus();
-            }, 10);
-        });
-    }
+    searchButtons.forEach(searchBtn => {
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchPopupOverlay.style.display = 'flex';
+                setTimeout(() => {
+                    document.querySelector('.search-popup').classList.add('active');
+                    document.querySelector('.search-popup-input').focus();
+                }, 10);
+            });
+        }
+    });
     
     // Close popup when clicking on overlay
     searchPopupOverlay.addEventListener('click', function(e) {
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle engine button click
     document.querySelector('.search-popup-button.engine').addEventListener('click', function() {
-        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
+        window.location.href = 'pages/general-search-engine.html';
     });
     
     // Handle input field enter key
@@ -92,15 +94,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function performSearch() {
         const searchQuery = document.querySelector('.search-popup-input').value.trim();
         if (searchQuery) {
-            // Implement actual search functionality here
-            // For now, we'll just close the popup
-            closePopup();
+            // Redirect to search engine with query
+            window.location.href = `pages/general-search-engine.html?q=${encodeURIComponent(searchQuery)}`;
+        } else {
+            // If no query, just go to search engine
+            window.location.href = 'pages/general-search-engine.html';
         }
     }
     
     // Engine search function redirects to general-search-engine.html
     function performEngineSearch() {
-        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
+        window.location.href = 'pages/general-search-engine.html';
     }
     
     // Close popup function

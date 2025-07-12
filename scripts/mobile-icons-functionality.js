@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle engine button click
         engineBtn.addEventListener('click', function() {
-            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
+            window.location.href = 'pages/general-search-engine.html';
         });
         
         // Handle input field enter key
