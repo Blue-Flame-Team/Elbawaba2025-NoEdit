@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle engine button click
         engineBtn.addEventListener('click', function() {
-            window.location.href = './pages/general-search-engine.html';
+            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
         });
         
         // Handle input field enter key
@@ -472,4 +472,80 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
     }
+
+    // Mobile Call Icon Functionality - Link to Contact Section
+    const mobileCallIcons = document.querySelectorAll('.mobile-icons .icon-btn img[src*="call"], .mobile-icons .icon-btn img[alt*="اتصال"]');
+    mobileCallIcons.forEach(icon => {
+        const button = icon.closest('.icon-btn');
+        if (button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Check if we're on a subpage or main page
+                const isSubpage = window.location.pathname.includes('/pages/');
+                if (isSubpage) {
+                    // Navigate to main page contact section
+                    window.location.href = '../index.html#contact';
+                } else {
+                    // Scroll to contact section on same page
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // Fallback: navigate to main page
+                        window.location.href = '#contact';
+                    }
+                }
+            });
+        }
+    });
+
+    // Support Icon Functionality - Link to Contact Section
+    const supportIcons = document.querySelectorAll('.support-icon-fixed, .support-icon-fixed img');
+    supportIcons.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Check if we're on a subpage or main page
+            const isSubpage = window.location.pathname.includes('/pages/');
+            if (isSubpage) {
+                // Navigate to main page contact section
+                window.location.href = '../index.html#contact';
+            } else {
+                // Scroll to contact section on same page
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback: navigate to main page
+                    window.location.href = '#contact';
+                }
+            }
+        });
+    });
+
+    // Desktop Call Icon Functionality - Link to Contact Section
+    const desktopCallIcons = document.querySelectorAll('.main-icons-group .icon-btn img[src*="call"], .main-icons-group .icon-btn img[alt*="اتصال"]');
+    desktopCallIcons.forEach(icon => {
+        const button = icon.closest('.icon-btn');
+        if (button && !button.onclick) { // Only add if no onclick already exists
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Check if we're on a subpage or main page
+                const isSubpage = window.location.pathname.includes('/pages/');
+                if (isSubpage) {
+                    // Navigate to main page contact section
+                    window.location.href = '../index.html#contact';
+                } else {
+                    // Scroll to contact section on same page
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // Fallback: navigate to main page
+                        window.location.href = '#contact';
+                    }
+                }
+            });
+        }
+    });
 });

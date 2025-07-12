@@ -168,3 +168,95 @@ body.dark-contrast .dropdown-menu a[style],
     color: #000000 !important;
     background-color: #ffffff !important;
 }
+
+/* تنسيقات محرك البحث العام في حالة التباين الأسود فقط */
+body.dark-contrast .search-engine-container,
+body.dark-contrast .search-engine-container *,
+body.dark-contrast .search-engine-title,
+body.dark-contrast .search-instructions,
+body.dark-contrast .search-instructions h3,
+body.dark-contrast .contact-help,
+body.dark-contrast .search-explanation,
+body.dark-contrast .search-explanation p,
+body.dark-contrast .search-tab,
+body.dark-contrast .search-input,
+body.dark-contrast .radio-text,
+body.dark-contrast .search-scope-title,
+body.dark-contrast .search-scope-option label,
+body.dark-contrast .document-number-note,
+body.dark-contrast .dropdown-selected,
+body.dark-contrast .dropdown-option,
+body.dark-contrast .search-results-container,
+body.dark-contrast .search-results,
+body.dark-contrast .search-result-card,
+body.dark-contrast .result-text,
+body.dark-contrast .results-count,
+body.dark-contrast .help-text,
+body.dark-contrast .main-search-header h1,
+body.dark-contrast .main-search-header h3,
+body.dark-contrast .search-explanation-simple,
+body.dark-contrast .tab-button,
+body.dark-contrast .radio-label,
+body.dark-contrast .radio-text,
+body.dark-contrast .document-number-note-press,
+body.dark-contrast .saudi-judgments-search-form .form-input,
+body.dark-contrast .saudi-judgments-search-form .dropdown-selected,
+body.dark-contrast .saudi-judgments-search-form .dropdown-option,
+.dark-contrast .search-engine-container,
+.dark-contrast .search-engine-container *,
+.dark-contrast .search-engine-title,
+.dark-contrast .search-instructions,
+.dark-contrast .search-instructions h3,
+.dark-contrast .contact-help,
+.dark-contrast .search-explanation,
+.dark-contrast .search-explanation p,
+.dark-contrast .search-tab,
+.dark-contrast .search-input,
+.dark-contrast .radio-text,
+.dark-contrast .search-scope-title,
+.dark-contrast .search-scope-option label,
+.dark-contrast .document-number-note,
+.dark-contrast .dropdown-selected,
+.dark-contrast .dropdown-option,
+.dark-contrast .search-results-container,
+.dark-contrast .search-results,
+.dark-contrast .search-result-card,
+.dark-contrast .result-text,
+.dark-contrast .results-count,
+.dark-contrast .help-text,
+.dark-contrast .main-search-header h1,
+.dark-contrast .main-search-header h3,
+.dark-contrast .search-explanation-simple,
+.dark-contrast .tab-button,
+.dark-contrast .radio-label,
+.dark-contrast .radio-text,
+.dark-contrast .document-number-note-press,
+.dark-contrast .saudi-judgments-search-form .form-input,
+.dark-contrast .saudi-judgments-search-form .dropdown-selected,
+.dark-contrast .saudi-judgments-search-form .dropdown-option {
+    color: #000000 !important;
+}
+
+/* زر البحث في حالة التباين الأسود - خلفية سوداء */
+body.dark-contrast .search-button,
+body.dark-contrast .saudi-judgments-search-form .search-button,
+body.dark-contrast .press-search-button,
+.dark-contrast .search-button,
+.dark-contrast .saudi-judgments-search-form .search-button,
+.dark-contrast .press-search-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+
+/* حالة hover لزر البحث في التباين الأسود */
+body.dark-contrast .search-button:hover,
+body.dark-contrast .saudi-judgments-search-form .search-button:hover,
+body.dark-contrast .press-search-button:hover,
+.dark-contrast .search-button:hover,
+.dark-contrast .saudi-judgments-search-form .search-button:hover,
+.dark-contrast .press-search-button:hover {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #333333 !important;
+}

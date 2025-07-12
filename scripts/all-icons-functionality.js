@@ -223,11 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // معالجة زر محرك البحث
         engineBtn.addEventListener('click', function() {
-            if (window.location.pathname.includes('/pages/')) {
-                window.location.href = '../pages/general-search-engine.html';
-            } else {
-                window.location.href = './pages/general-search-engine.html';
-            }
+            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
         });
         
         // معالجة مفتاح Enter في حقل البحث
@@ -352,4 +348,28 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    // Support Icon Functionality - Link to Contact Section
+    const supportIcons = document.querySelectorAll('.support-icon-fixed, .support-icon-fixed img');
+    supportIcons.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Check if we're on a subpage or main page
+            const isSubpage = window.location.pathname.includes('/pages/');
+            if (isSubpage) {
+                // Navigate to main page contact section
+                window.location.href = '../index.html#contact';
+            } else {
+                // Scroll to contact section on same page
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback: navigate to main page
+                    window.location.href = '#contact';
+                }
+            }
+        });
+    });
 });

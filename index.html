@@ -303,6 +303,7 @@ body.dark-contrast {
 <script src="scripts/mobile-search-functionality.js"></script>
     <!-- Zoom Functionality -->
     <link rel="stylesheet" href="styles/shared/zoom-styles.css">
+    <link rel="stylesheet" href="styles/engine-button-fix.css">
     <script src="scripts/unified-zoom.js"></script>
 </head>
 <body>
@@ -459,7 +460,7 @@ body.dark-contrast {
                             <button class="icon-btn" onclick="window.location.href='#contact'" data-original-font-size="16">
                                 <img src="assets/icons/location.png" alt="الموقع">
                             </button>
-                            <button class="icon-btn" data-original-font-size="16">
+                            <button class="icon-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" data-original-font-size="16">
                                 <img src="assets/icons/call.png" alt="اتصال">
                             </button>
                             <button class="icon-btn profile-btn profile-icon-btn" style="display: none;" data-original-font-size="16" data-profile-setup="true">
@@ -653,7 +654,7 @@ body.dark-contrast {
                                         </div>
                                         <h3 class="service-title">أنظمة صدرت ولم تنشر بعد بالجريدة الرسمية</h3>
                                         <p class="card-desc">الأنظمة والقوانين التي تم إقرارها لتصبح لائحة التعديلات</p>
-                                        <a href="pages/general-search-engine.html" class="more-btn">التعرف على المزيد</a>
+                                        <a href="http://127.0.0.1:5504/pages/general-search-engine.html" class="more-btn">التعرف على المزيد</a>
                                     </div>
                                 <a href="pages/our-services.html" class="slider-arrow prev">
                                     <img src="assets/icons/services-arrow.svg" alt="السابق" class="arrow-icon">
@@ -1204,6 +1205,10 @@ body.dark-contrast {
 
     <script src="scripts/main.js"></script>
     <script src="scripts/modal-manager.js"></script>
+    <script src="scripts/update-search-engine-links.js"></script>
+    <script src="scripts/global-search-engine-update.js"></script>
+    <script src="scripts/test-engine-button.js"></script>
+    <script src="scripts/engine-button-ultimate-fix.js"></script>
 
 <script src="scripts/search-popup.js"></script>
     <script src="scripts/unified-icons.js"></script>

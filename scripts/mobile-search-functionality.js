@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const engineButton = document.querySelector('.mobile-search-popup .search-popup-button.engine');
     if (engineButton) {
         engineButton.addEventListener('click', function() {
-            window.location.href = './pages/general-search-engine.html';
+            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
         });
     }
     
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchQuery = document.querySelector('.mobile-search-popup .search-popup-input').value.trim();
         if (searchQuery) {
             // Redirect to search engine with query
-            window.location.href = `./pages/general-search-engine.html?q=${encodeURIComponent(searchQuery)}`;
+            window.location.href = `http://127.0.0.1:5504/pages/general-search-engine.html?q=${encodeURIComponent(searchQuery)}`;
         }
     }
     

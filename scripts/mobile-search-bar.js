@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchQuery = searchInput.value.trim();
         if (searchQuery) {
             // Redirect to general search engine
-            window.location.href = '/pages/general-search-engine.html?q=' + encodeURIComponent(searchQuery);
+            window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html?q=' + encodeURIComponent(searchQuery);
         }
     }
 
     // Event listeners
     searchButton.addEventListener('click', performSearch);
     engineButton.addEventListener('click', function() {
-        window.location.href = '/pages/general-search-engine.html';
+        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
     });
 
     searchInput.addEventListener('keydown', function(e) {

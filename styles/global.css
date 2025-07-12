@@ -222,24 +222,55 @@ button {
     max-width: 100%;
 }
 
+/* Support Icon Styling */
 .support-icon-fixed {
-    position: fixed;
-    left: 20px;
-    bottom: 20%;
-    z-index: 999;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    cursor: pointer !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 1000 !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background-color: #17a891 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .support-icon-fixed:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
+    opacity: 0.9 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .support-icon-fixed img {
-    width: 60px;
-    height: 60px;
+    cursor: pointer !important;
+    width: 32px !important;
+    height: 32px !important;
+    filter: brightness(0) invert(1) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.support-icon-fixed:hover img {
+    transform: scale(1.1) !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .support-icon-fixed {
+        width: 50px !important;
+        height: 50px !important;
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    
+    .support-icon-fixed img {
+        width: 28px !important;
+        height: 28px !important;
+    }
 }
 
 .profile-menu {

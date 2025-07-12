@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle engine button click
     document.querySelector('.search-popup-button.engine').addEventListener('click', function() {
-        window.location.href = './pages/general-search-engine.html';
+        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
     });
     
     // Handle input field enter key
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Engine search function redirects to general-search-engine.html
     function performEngineSearch() {
-        window.location.href = './pages/general-search-engine.html';
+        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
     }
     
     // Close popup function

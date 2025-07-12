@@ -25,7 +25,7 @@
         analytics: 'pages/analytics.html',
         judgments: 'pages/judgments-display.html',
         validRegulations: 'pages/valid-regulations.html',
-        search: 'pages/general-search-engine.html',
+        search: 'http://127.0.0.1:5504/pages/general-search-engine.html',
         contact: '#contact-section' // Sección en la página de inicio
     };
     

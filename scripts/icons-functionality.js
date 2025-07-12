@@ -75,19 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // معالجة النقر على زر محرك البحث
     document.querySelector('.search-popup-button.engine').addEventListener('click', function() {
-        // تحديد المسار الصحيح اعتمادًا على موقع الصفحة الحالية
-        const currentPath = window.location.pathname;
-        let enginePath = '';
-        
-        // إذا كانت الصفحة الحالية في مجلد فرعي (pages)
-        if (currentPath.includes('/pages/')) {
-            enginePath = './general-search-engine.html';
-        } else {
-            // إذا كانت الصفحة الحالية هي الصفحة الرئيسية
-            enginePath = './pages/general-search-engine.html';
-        }
-        
-        window.location.href = enginePath;
+        window.location.href = 'http://127.0.0.1:5504/pages/general-search-engine.html';
     });
     
     // معالجة ضغط مفتاح Enter في حقل البحث
@@ -166,12 +154,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- زر الاتصال ---
     const callBtns = document.querySelectorAll('button.icon-btn:has(img[src*="call"])');
     callBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // فتح قسم الاتصال في صفحة اتصل بنا
-            window.location.href = window.location.pathname.includes('/pages/') ? 
-                                  '../index.html#contact-section' : 
-                                  '#contact-section';
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Check if we're on a subpage or main page
+            const isSubpage = window.location.pathname.includes('/pages/');
+            if (isSubpage) {
+                // Navigate to main page contact section
+                window.location.href = '../index.html#contact';
+            } else {
+                // Scroll to contact section on same page
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback: navigate to main page
+                    window.location.href = '#contact';
+                }
+            }
         });
+    });
+
+    // Alternative selector for call buttons (more comprehensive)
+    const callBtnsAlt = document.querySelectorAll('.icon-btn img[src*="call"], .icon-btn img[alt*="اتصال"]');
+    callBtnsAlt.forEach(icon => {
+        const button = icon.closest('.icon-btn');
+        if (button && !button.hasAttribute('data-call-linked')) {
+            button.setAttribute('data-call-linked', 'true');
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Check if we're on a subpage or main page
+                const isSubpage = window.location.pathname.includes('/pages/');
+                if (isSubpage) {
+                    // Navigate to main page contact section
+                    window.location.href = '../index.html#contact';
+                } else {
+                    // Scroll to contact section on same page
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // Fallback: navigate to main page
+                        window.location.href = '#contact';
+                    }
+                }
+            });
+        }
     });
 
     // --- زر الإعدادات وقائمة الإعدادات ---
